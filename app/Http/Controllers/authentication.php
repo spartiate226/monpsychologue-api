@@ -43,6 +43,7 @@ class authentication extends Controller
         }
     }
     function register(Request $request){
+       return  json_encode($request->all());
         switch ($request->type){
             case 'psychologue' :
                 $user=User::create($request->user);
