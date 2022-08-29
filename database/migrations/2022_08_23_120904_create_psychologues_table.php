@@ -16,10 +16,11 @@ class CreatePsychologuesTable extends Migration
         Schema::create('psychologues', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('description');
             $table->string('nom');
             $table->string('prenom');
+            $table->string('telephone');
             $table->boolean('verified');
             $table->timestamps();
         });

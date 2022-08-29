@@ -18,7 +18,7 @@ class CreateEtablisementsTable extends Migration
             $table->string('nom');
             $table->string('email');
             $table->string('numero');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->boolean('verified');
             $table->integer('admin_id');
             $table->timestamps();

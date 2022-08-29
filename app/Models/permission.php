@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class permission extends Model
 {
     use HasFactory;
+    protected $guarded=[];
     function roles(){
         return $this->belongsToMany(role::class,'roles','permission_id','id');
     }
