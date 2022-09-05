@@ -14,11 +14,14 @@ class userressource extends JsonResource
      */
     public function toArray($request)
     {
+        $utilisateur=$this;
         return [
-            'user'=>$this,
+            'pseudonyme'=>$this->pseudonyme,
+            'email'=>$this->email,
+            'role_id'=>$this->role_id,
             'relations'=>[
-                'visiteur'=>$this->visiteur,
-                'psychologue'=>$this->psychologue,
+                'visiteur'=>new visiteurressource($this->visiteur),
+                'psychologue'=>new psychologueressource($this->psychologue),
                 'cabinet'=>$this->cabinet,
                 'etablissement'=>$this->etablissement,
             ]

@@ -48,7 +48,7 @@ class authentication extends Controller
         $data=$request->all();
         switch ($request->type){
             case 'psychologue' :
-                return $data;
+               // return $data;
                 $user=User::create([
                     'role_id'=>2,
                     'email'=>$data['psychologue-email'],

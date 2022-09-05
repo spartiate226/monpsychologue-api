@@ -14,6 +14,17 @@ class psychologueressource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'user_id'=>$this->user_id,
+            'photo'=>$this->photo,
+            'description'=>$this->description,
+            'nom'=>$this->nom,
+            'prenom'=>$this->prenom,
+            'telephone'=>$this->telephone,
+            'verified'=>$this->verified,
+            'user'=>$this->user,
+            'rdv'=>$this->rdvs,
+            'cabinet'=>$this->cabinet,
+        ];
     }
 }

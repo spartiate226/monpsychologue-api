@@ -17,15 +17,16 @@ class rdv extends Controller
     public function __invoke(Request $request,$option)
     {
         if(method_exists($this,$option)){
-            $this->$option();
+            return $this->$option($request);
         }else{
             return abort(404);
         }
     }
     function take_rdv(Request $request){
         $data=$request->all();
-        $code=Str::random(8);
-        $data['code']=Hash::make($code);
+        $code=Str::random(5);
+        $data['code']=$code;
+        $data['statut']='en attente';
         $rdv=\App\Models\rdv::create($data);
         return $rdv;
     }

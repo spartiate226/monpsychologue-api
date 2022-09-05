@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\livre;
 use Illuminate\Http\Request;
 
 class psycotheque extends Controller
@@ -15,9 +16,13 @@ class psycotheque extends Controller
     public function __invoke(Request $request,$option)
     {
         if(method_exists($this,$option)){
-            $this->$option();
+            return $this->$option($request);
         }else{
             return abort(404);
         }
+    }
+
+    function getlist($request){
+      return livre::all();
     }
 }

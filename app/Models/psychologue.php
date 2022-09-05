@@ -12,4 +12,10 @@ class psychologue extends Model
     function cabinet(){
         return $this->belongsTo(cabinet::class);
     }
+    function user(){
+        return $this->belongsTo(User::class);
+    }
+    function rdvs(){
+        return $this->hasMany(rdv::class);
+    }
 }

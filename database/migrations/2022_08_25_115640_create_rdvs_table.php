@@ -17,10 +17,11 @@ class CreateRdvsTable extends Migration
             $table->id();
             $table->integer('psychologue_id');
             $table->string('code');
+            $table->string('statut');
             $table->integer('patient_id');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->date('date_rdv');
-            $table->time('heure_rdv');
+            $table->time('heure_rdv')->nullable();
             $table->timestamps();
         });
     }
