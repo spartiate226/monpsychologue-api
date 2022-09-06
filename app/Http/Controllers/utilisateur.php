@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\psychologueressource;
 use App\Http\Resources\userressource;
 use App\Models\psychologue;
+use App\Models\specialite;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -58,5 +59,8 @@ class utilisateur extends Controller
     }
     function psychologues(Request $request){
         return psychologue::all();
+    }
+    function getspecialites(){
+        return specialite::all();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categorielivre;
 use App\Models\livre;
 use Illuminate\Http\Request;
 
@@ -24,5 +25,8 @@ class psycotheque extends Controller
 
     function getlist($request){
       return livre::all();
+    }
+    function getcategories(){
+        return categorielivre::all();
     }
 }

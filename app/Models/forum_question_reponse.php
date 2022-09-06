@@ -12,6 +12,9 @@ class forum_question_reponse extends Model
     function question(){
         return $this->belongsTo(forum_question::class,'question_id','id');
     }
+    function reponseto(){
+        return $this->belongsTo(forum_question_reponse::class,'reponse_id','id');
+    }
     function user(){
         return $this->belongsTo(User::class,'author_id','id');
     }

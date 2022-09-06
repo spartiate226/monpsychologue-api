@@ -20,4 +20,5 @@ Route::namespace('App\Http\Controllers')->group(function (){
     Route::any('rdv/{option}','rdv');
     Route::any('psychotheque/{option}','psycotheque');
     Route::any('forum/{option}','forum');
+    Route::any('abonnement/{option}','abonnement');
 });

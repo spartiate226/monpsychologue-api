@@ -15,9 +15,11 @@ class answerresource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'=>$this->id,
             'auteur'=>$this->user->pseudonyme,
             'question_id'=>$this->question_id,
             'reponse'=>$this->reponse,
+            'reponseto'=>new answerresource($this->reponseto),
             'date'=>$this->created_at
         ];
     }

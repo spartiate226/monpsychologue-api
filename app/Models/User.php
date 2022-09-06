@@ -27,4 +27,7 @@ class User extends Authenticatable
     function role(){
         return $this->belongsTo(role::class);
     }
+    function souscriptions(){
+        return $this->hasMany(abonnement_soucription::class);
+    }
 }

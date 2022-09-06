@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\userressource;
 use App\Models\cabinet;
 use App\Models\etablisement;
 use App\Models\psychologue;
@@ -39,7 +40,7 @@ class authentication extends Controller
                     $sup=$user->visiteur;
                     break;
             }
-            return  Response()->json(['user'=>$user,'moreinfo'=>$sup]);
+            return  Response()->json(['user'=>new userressource($user),'moreinfo'=>$sup]);
         }else{
             return 'unknown';
         }

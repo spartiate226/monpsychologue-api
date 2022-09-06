@@ -16,6 +16,7 @@ class userressource extends JsonResource
     {
         $utilisateur=$this;
         return [
+            'id'=>$this->id,
             'pseudonyme'=>$this->pseudonyme,
             'email'=>$this->email,
             'role_id'=>$this->role_id,
@@ -24,6 +25,7 @@ class userressource extends JsonResource
                 'psychologue'=>new psychologueressource($this->psychologue),
                 'cabinet'=>$this->cabinet,
                 'etablissement'=>$this->etablissement,
+                'abonnement'=>$this->souscriptions()->where('expiration','<=',date('Y-m-d'))->first()
             ]
         ];
     }
