@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\rdvresource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -34,6 +35,6 @@ class rdv extends Controller
        return \App\Models\rdv::find($request->id);
     }
     function list_rdv(Request $request){
-        return \App\Models\rdv::all();
+        return rdvresource::collection(\App\Models\rdv::all());
     }
 }

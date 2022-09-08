@@ -40,9 +40,9 @@ class authentication extends Controller
                     $sup=$user->visiteur;
                     break;
             }
-            return  Response()->json(['user'=>new userressource($user),'moreinfo'=>$sup]);
+            return  Response()->json(['user'=>new userressource($user),'moreinfo'=>$sup,'rep'=>'know']);
         }else{
-            return 'unknown';
+            return  Response()->json(['rep'=>'unknown']);
         }
     }
     function register($request){
