@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('App\Http\Controllers')->group(function (){
-    Route::any('auth/{option}','authentication');
-    Route::any('utilisateur/{option}','utilisateur');
-    Route::any('rdv/{option}','rdv');
-    Route::any('psychotheque/{option}','psycotheque');
-    Route::any('forum/{option}','forum');
-    Route::any('abonnement/{option}','abonnement');
+    Route::any('auth/{option}','authentication')->middleware('cors');
+    Route::any('utilisateur/{option}','utilisateur')->middleware('cors');
+    Route::any('rdv/{option}','rdv')->middleware('cors');
+    Route::any('psychotheque/{option}','psycotheque')->middleware('cors');
+    Route::any('forum/{option}','forum')->middleware('cors');
+    Route::any('abonnement/{option}','abonnement')->middleware('cors');
 });
