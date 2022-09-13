@@ -36,4 +36,7 @@ class User extends Authenticatable
     function psyrdvs(){
         return $this->hasMany(rdv::class,'psychologue_id','id');
     }
+    function rdvs(){
+        return $this->hasMany(rdv::class,'patient_id','id');
+    }
 }

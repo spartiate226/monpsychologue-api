@@ -17,6 +17,7 @@ class CreateAbonnementSoucriptionsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('abonnement_id');
+            $table->string('code');
             $table->date('expiration');
             $table->timestamps();
         });

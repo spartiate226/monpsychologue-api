@@ -13,4 +13,7 @@ class abonnement_soucription extends Model
     function abonnement(){
         return $this->BelongsTo(abonnement::class);
     }
+    function user(){
+        return $this->BelongsTo(User::class);
+    }
 }

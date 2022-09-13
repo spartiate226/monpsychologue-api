@@ -17,6 +17,7 @@ class Moretableforpsychologue extends Migration
             $table->integer('ville')->nullable();
             $table->integer('specialite_id')->nullable();
             $table->text('consultday')->nullable();
+            $table->integer('psymaison')->nullable();
             $table->integer('pays')->nullable();
         });
     }
