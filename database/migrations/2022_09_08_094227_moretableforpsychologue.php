@@ -15,6 +15,8 @@ class Moretableforpsychologue extends Migration
     {
         Schema::table('psychologues', function (Blueprint $table) {
             $table->integer('ville')->nullable();
+            $table->integer('specialite_id')->nullable();
+            $table->text('consultday')->nullable();
             $table->integer('pays')->nullable();
         });
     }

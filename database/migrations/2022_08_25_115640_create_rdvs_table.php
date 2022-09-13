@@ -20,7 +20,7 @@ class CreateRdvsTable extends Migration
             $table->string('statut');
             $table->integer('patient_id');
             $table->text('description')->nullable();
-            $table->date('date_rdv');
+            $table->string('date_rdv');
             $table->time('heure_rdv')->nullable();
             $table->timestamps();
         });

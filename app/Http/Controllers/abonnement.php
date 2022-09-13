@@ -36,4 +36,11 @@ class abonnement extends Controller
 
         }
     }
+
+    function getabonnementinfo($request){
+        $souscription=abonnement_soucription::find($request->id);
+        return Response()->json(['info'=>[
+            'abonnement'=>$souscription->abonnement
+        ]]);
+    }
 }

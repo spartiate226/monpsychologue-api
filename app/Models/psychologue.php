@@ -16,6 +16,9 @@ class psychologue extends Model
         return $this->belongsTo(User::class);
     }
     function rdvs(){
-        return $this->hasMany(rdv::class);
+        return $this->hasMany(rdv::class,'psychologue_id','id');
+    }
+    function specialite(){
+        return $this->belongsTo(specialite::class);
     }
 }

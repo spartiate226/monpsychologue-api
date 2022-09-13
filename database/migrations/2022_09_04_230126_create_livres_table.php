@@ -19,6 +19,7 @@ class CreateLivresTable extends Migration
             $table->string('photo');
             $table->string('lien');
             $table->integer('prix');
+            $table->integer('categorie_id');
             $table->text('description');
             $table->boolean('candownload');
             $table->timestamps();

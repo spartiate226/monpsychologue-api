@@ -24,10 +24,16 @@ class User extends Authenticatable
     function cabinet(){
         return $this->hasOne(cabinet::class,'admin_id','id');
     }
+    function forum(){
+        return $this->hasOne(forum::class,'admin_id','id');
+    }
     function role(){
         return $this->belongsTo(role::class);
     }
     function souscriptions(){
         return $this->hasMany(abonnement_soucription::class);
+    }
+    function psyrdvs(){
+        return $this->hasMany(rdv::class,'psychologue_id','id');
     }
 }

@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-       /* role::factory()->create();
+       role::factory()->create();
         role::factory()->create(['label'=>'psychologue']);
         $this->call(CategorielivreSeeder::class);
-        $this->call(SpecialiteSeeder::class);*/
+        $this->call(SpecialiteSeeder::class);
         $this->call(AbonnementSeeder::class);
 
     }

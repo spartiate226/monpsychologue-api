@@ -23,8 +23,11 @@ class psychologueressource extends JsonResource
             'telephone'=>$this->telephone,
             'verified'=>$this->verified,
             'user'=>$this->user,
-            'rdv'=>$this->rdvs,
-            'cabinet'=>$this->cabinet,
+            'rdv'=>$this->user->psyrdvs,
+            'cabinet'=>$this->user->cabinet,
+            'forum'=>$this->user->forum,
+            'specialite'=>$this->specialite,
+            'consultday'=>$this->consultday,
         ];
     }
 }

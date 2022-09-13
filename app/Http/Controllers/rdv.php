@@ -29,12 +29,25 @@ class rdv extends Controller
         $data['code']=$code;
         $data['statut']='en attente';
         $rdv=\App\Models\rdv::create($data);
-        return $rdv;
+        return Response()->json(['rep'=>'ok','rdv'=>$rdv]);
     }
     function single(Request $request){
        return \App\Models\rdv::find($request->id);
     }
     function list_rdv(Request $request){
         return rdvresource::collection(\App\Models\rdv::all());
+    }
+
+    function acceptordecline(Request $request){
+        $rdv=\App\Models\rdv::find($request->id);
+        if($request->decision==1){
+            $decision='accepte';
+        }else if($request->decision==0){
+            $decision='refuse';
+        }
+        $rdv->update([
+            'statut'=>$decision
+        ]);
+        return Response()->json(['rep'=>'ok']);
     }
 }

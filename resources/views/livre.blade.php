@@ -21,6 +21,14 @@
                         <input class="form-control" name="prix" type="number" value="0" placeholder="Prix du livre">
                     </div>
                     <div class="form-group">
+                        <select class="form-control" name="categorie_id" id="">
+                            <option selected value="0">Choisir une categorie</option>
+                            @foreach ($categories as $cat)
+                            <option value="{{$cat->id}}">{{$cat->nom}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="">Choisir le livre</label>
                         <input class="form-control" name="livre" type="file" placeholder="Nom du livre">
                     </div>

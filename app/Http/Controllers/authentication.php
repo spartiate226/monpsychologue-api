@@ -60,9 +60,11 @@ class authentication extends Controller
                     'user_id'=>$user->id,
                     'nom'=>$data['psychologue-nom'],
                     'prenom'=>$data['psychologue-prenom'],
-                    'photo'=>$data['psychologue-photo'],
+                    'photo'=>$request['psychologue-photo']->store('userphotos','public'),
                     'telephone'=>$data['psychologue-telephone'],
-                    'description'=>$data['psychologue-description']
+                    'description'=>$data['psychologue-description'],
+                    'specialite_id'=>$data['psychologue-specialite'],
+                    'consultday'=>$data['psychologue-consultday']
                 ]);
                 return Response()->json(['user'=>$user,'psychologue'=>$psychologue]);
                 break;
@@ -77,7 +79,7 @@ class authentication extends Controller
                     'user_id'=>$user->id,
                     'nom'=>$data['visiteur-nom'],
                     'prenom'=>$data['visiteur-prenom'],
-                    'photo'=>$data['visiteur-photo'],
+                    'photo'=>$request['visiteur-photo']->store('userphotos','public'),
                     'telephone'=>$data['visiteur-telephone']
                 ]);
                 return Response()->json(['user'=>$user,'visiteur'=>$visiteur]);
@@ -93,7 +95,7 @@ class authentication extends Controller
                     'user_id'=>$user->id,
                     'nom'=>$data['psychologue-nom'],
                     'prenom'=>$data['psychologue-prenom'],
-                    'photo'=>$data['psychologue-photo'],
+                    'photo'=>$request['psychologue-photo']->store('userphotos','public'),
                     'telephone'=>$data['psychologue-telephone'],
                     'description'=>$data['psychologue-description'],
                     'verified'=>0
@@ -103,7 +105,7 @@ class authentication extends Controller
                     'nom'=>$data['cabinet-nom'],
                     'email'=>$data['cabinet-email'],
                     'numero'=>$data['cabinet-numero'],
-                    'photo'=>$data['cabinet-photo'],
+                    'photo'=>$request['cabinet-photo']->store('userphotos','public'),
                     'verified'=>0
                 ];
                 $cabinet=cabinet::create($datacab);
@@ -120,7 +122,7 @@ class authentication extends Controller
                     'user_id'=>$user->id,
                     'nom'=>$data['visiteur-nom'],
                     'prenom'=>$data['visiteur-prenom'],
-                    'photo'=>$data['visiteur-photo'],
+                    'photo'=>$request['visiteur-photo']->store('userphotos','public'),
                     'telephone'=>$data['visiteur-telephone']
                 ]);
                 $dataet=[
@@ -128,7 +130,7 @@ class authentication extends Controller
                     'nom'=>$data['etablissement-nom'],
                     'email'=>$data['etablissement-email'],
                     'numero'=>$data['etablissement-numero'],
-                    'photo'=>$data['etablissement-photo'],
+                    'photo'=>$request['etablissement-photo']->store('userphotos','public'),
                     'verified'=>0
                 ];
                 $etablissement=etablisement::create($dataet);

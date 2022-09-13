@@ -24,9 +24,16 @@ class psycotheque extends Controller
     }
 
     function getlist($request){
+        if(isset($request->categorie) && $request->categorie!='all'){
+            return livre::where('categorie_id','=',$request->categorie)->get();
+        }
       return livre::all();
     }
-    function getcategories(){
+    function getlivre($request){
+        return livre::find($request->id);
+    }
+    function getcategories($request){
         return categorielivre::all();
     }
+    
 }

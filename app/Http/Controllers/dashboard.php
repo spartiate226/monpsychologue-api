@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categorielivre;
 use App\Models\livre;
 use App\Models\forum;
 use Illuminate\Http\Request;
@@ -38,7 +39,8 @@ class dashboard extends Controller
 
     function  livres($request){
         $livres=livre::paginate(20);
-        return view('livre',compact('livres'));
+        $categories=categorielivre::all();
+        return view('livre',compact('livres','categories'));
     }
     function  forums($request){
         $forums=forum::paginate(20);

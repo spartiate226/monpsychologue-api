@@ -29,6 +29,9 @@ class utilisateur extends Controller
     function getlist(Request $request){
         switch ($request->type) {
             case 'psychologues':
+                if(isset($request->specialite) && $request->specialite!='all'){
+                    return psychologue::where('specialite_id','=',$request->specialite)->get();
+                }
                 return psychologue::all();
                 break;
             case 'visiteur':
@@ -59,6 +62,9 @@ class utilisateur extends Controller
     }
     function psychologues(Request $request){
         return psychologue::all();
+    }
+    function featuredpsy($request){
+        return psychologue::inRandomOrder()->get()->take($request->limit);
     }
     function getspecialites(){
         return specialite::all();
